@@ -1,0 +1,59 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+    int row,col,temp,row_limit,col_limit=0;
+    int in_matrix[row_limit][col_limit];
+    int out_matrix[row_limit][col_limit];
+    
+    
+    cout<<"Enter number of rows : \n";
+    cin>>row_limit;
+    cout<<"Enter number of columns : \n";
+    cin>>col_limit;
+    
+    cout<<"Please fill the matrix : \n";
+    
+    for(row=0;row<row_limit;row++)
+    {
+        for(col=0;col<col_limit;col++)
+        {
+            cin>>in_matrix[row][col];
+            //cout<<"\t";
+        }
+        cout<<"\n";
+    }
+    
+    cout<<"\nin_matrix is : \n";
+    cout <<"\n-------------------\n";
+    for(row=0;row<row_limit;row++)
+    {
+        for(col=0;col<col_limit;col++)
+        {
+            cout<<in_matrix[row][col];
+            cout<<"\t";
+        }
+        cout<<"\n";
+    }
+    cout <<"-------------------\n";
+    cout <<"\nout_matrix is : \n";
+    cout <<"\n-------------------\n";
+    for(col=0;col<col_limit;col++)
+    {
+        temp=0;
+        for(row=row_limit-1;row>=0;row--)
+        {
+            out_matrix[col][temp]=in_matrix[row][col];
+            cout<<out_matrix[col][temp];
+            cout<<"\t";
+            temp = temp + 1;
+            
+        }
+        cout<<"\n";
+    }
+    cout <<"-------------------\n";
+    
+   return 0;
+}
